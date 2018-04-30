@@ -15,12 +15,12 @@ def usage(ext):
 
 
 def main():
-    STEP = 10   # number to increment lines by
+    STEP = 10  # number to increment lines by
     count = 0
-    acl, inputfile = '', ''
+    acl, inputfile = "", ""
 
     try:
-        inputfile = open(sys.argv[1], 'r')
+        inputfile = open(sys.argv[1], "r")
     except (IndexError, IOError):
         usage(0)
 
@@ -29,7 +29,7 @@ def main():
         s = line.strip().split(" ", 1)
         if s[0].isdigit():
             count += 1
-            acl = " " + str(count*STEP) + " " + s[1]
+            acl = " " + str(count * STEP) + " " + s[1]
         else:
             acl = line.strip()
         print(acl)
@@ -42,5 +42,5 @@ def main():
     sys.exit(0)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
